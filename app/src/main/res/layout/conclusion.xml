@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/TextCount"
-        android:layout_width="138dp"
+        android:layout_width="235dp"
         android:layout_height="56dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="424dp"
-        android:layout_marginLeft="120dp"
-        android:text="summary"
-        android:textSize="32dp"
+        android:layout_marginBottom="416dp"
+        android:layout_marginLeft="40dp"
+        android:text="please put your robot in the fixed position"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -23,24 +23,24 @@
         android:id="@+id/startVacuum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="400dp"
         android:text="START"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonReset"
+        android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="20dp"
-        android:text="RESET"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="400dp"
+        android:text="BACK"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonClick" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
-        android:id="@+id/tableLayout"
+        android:id="@+id/tableLayout02"
         android:layout_width="252dp"
         android:layout_height="252dp"
         android:layout_marginStart="64dp"
