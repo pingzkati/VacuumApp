@@ -45,7 +45,8 @@ public class ConclusionActivity extends AppCompatActivity {
     TableLayout allTable;
 
     static String MQTTHOST = "tcp://159.89.198.162:1883";
-    String topicStr = "topic/test";
+    String pub_topic = "topic/map";
+    String sub_topic = "topic/position" ;
     MqttAndroidClient client;
     TextView subText;
     Vibrator vibrator;
@@ -112,27 +113,22 @@ public class ConclusionActivity extends AppCompatActivity {
     }
 
     public void pub (View v){
-        String pubtopic = topicStr;
-        String pubmessage = roommap;
-
+        String pub_message = roommap;
         try {
-            client.publish(pubtopic, pubmessage.getBytes(),0,false);
+            client.publish(pub_topic, pub_message.getBytes(),0,false);
         } catch (MqttException e) {
             e.printStackTrace();
         }
     }
 
     private void setSubscription(){
-        String subtopic = "topic/position" ;
+
         try{
-            client.subscribe(subtopic,0);
+            client.subscribe(sub_topic,0);
         }catch (MqttException e){
             e.printStackTrace();
         }
     }
-
-
-
 
 
     public void setPlan(String roommap, TableLayout allTable) {
