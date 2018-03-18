@@ -112,19 +112,20 @@ public class ConclusionActivity extends AppCompatActivity {
     }
 
     public void pub (View v){
-        String topic = topicStr;
-        String message = "Hello world!";
+        String pubtopic = topicStr;
+        String pubmessage = roommap;
 
         try {
-            client.publish(topic, message.getBytes(),0,false);
+            client.publish(pubtopic, pubmessage.getBytes(),0,false);
         } catch (MqttException e) {
             e.printStackTrace();
         }
     }
 
     private void setSubscription(){
+        String subtopic = "topic/position" ;
         try{
-            client.subscribe(topicStr,0);
+            client.subscribe(subtopic,0);
         }catch (MqttException e){
             e.printStackTrace();
         }
