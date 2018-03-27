@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".SelectPlanActivity">
         </activity>
+        <activity android:name=".WorkingActivity">
+    </activity>
     </application>
 
 </manifest>

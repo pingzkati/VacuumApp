@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.warann.vacuum.vacuumapp.SelectPlanActivity"
     >
 
     <TextView
@@ -119,11 +118,12 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
-                    android:id="@+id/checkbox_id"
+                    android:id="@+id/check1_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -131,12 +131,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check1_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -144,12 +146,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check1_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -157,12 +161,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check1_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -170,12 +176,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check1_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -183,12 +191,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check1_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -196,12 +206,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check1_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -209,12 +221,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check1_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -240,12 +254,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check2_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -253,12 +269,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check2_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -266,12 +284,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check2_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -279,12 +299,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check2_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -292,12 +314,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check2_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -305,12 +329,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check2_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -318,12 +344,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check2_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -331,12 +359,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check2_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -362,12 +392,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check3_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -375,12 +407,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check3_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -388,12 +422,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check3_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -401,12 +437,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check3_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -414,12 +452,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check3_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -427,12 +467,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check3_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -440,12 +482,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check3_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -453,12 +497,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check3_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -484,12 +530,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check4_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -497,12 +545,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check4_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -510,12 +560,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check4_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -523,12 +575,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check4_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -536,12 +590,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check4_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -549,12 +605,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check4_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -562,12 +620,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check4_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -575,12 +635,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check4_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -606,12 +668,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check5_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -619,12 +683,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check5_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -632,12 +698,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check5_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -645,12 +713,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check5_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -658,12 +728,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check5_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -671,12 +743,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check5_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -684,12 +758,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check5_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -697,12 +773,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check5_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -728,12 +806,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check6_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -741,12 +821,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check6_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -754,12 +836,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check6_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -767,12 +851,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check6_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -780,12 +866,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check6_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -793,12 +881,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check6_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -806,12 +896,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check6_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -819,12 +911,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check6_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -850,12 +944,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check7_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -863,12 +959,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check7_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -876,12 +974,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check7_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -889,12 +989,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check7_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -902,12 +1004,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check7_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -915,12 +1019,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check7_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -928,12 +1034,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check7_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -941,12 +1049,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check7_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -972,12 +1082,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check8_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -985,12 +1097,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check8_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -998,12 +1112,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check8_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked" />
             </TableRow>
 
             <TableRow
@@ -1011,12 +1127,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check8_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -1024,12 +1142,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check8_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -1037,12 +1157,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check8_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -1050,12 +1172,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check8_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
@@ -1063,12 +1187,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp">
                 <CheckBox
+                    android:id="@+id/check8_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="0"
                     android:focusable="false"
-                    android:focusableInTouchMode="false" />
+                    android:focusableInTouchMode="false"
+                    android:onClick="onCheckboxClicked"/>
             </TableRow>
 
             <TableRow
