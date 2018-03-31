@@ -21,14 +21,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConclusionActivity">
+        <activity android:name="ConclusionActivity">
         </activity>
-        <activity android:name=".SelectPlanActivity">
+        <activity android:name="SelectPlanActivity">
         </activity>
         <activity android:name=".WorkingActivity">
     </activity>
         <service android:name="org.eclipse.paho.android.service.MqttService" >
         </service>
+        <activity android:name="WorkingActivity">
+        </activity>
+        <activity android:name="SelectSizeActivity">
+        </activity>
+        <activity android:name="ConclusionIntent">
+        </activity>
+
     </application>
 
 </manifest>

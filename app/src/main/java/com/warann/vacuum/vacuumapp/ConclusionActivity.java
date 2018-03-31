@@ -134,22 +134,22 @@ public class ConclusionActivity extends AppCompatActivity {
         });
     }
 
-    public void setWalls(int[][] walls){
-//        if(walls[1][1]==1){
+//    public void setWalls(int[][] walls){
+////        if(walls[1][1]==1){
+////
+////        }
+////        for(int i = 0; i<10;i++){
+////            for(int j =0; j<10; j++){
+////                walls[i][j] = 0;
+////            }
+////        }
+////        for(int i = 0; i<5;i++){
+////            for(int j =0; j<5; j++){
+////                walls[i][j] = 1;
+////            }
+////        }
 //
-//        }
-//        for(int i = 0; i<10;i++){
-//            for(int j =0; j<10; j++){
-//                walls[i][j] = 0;
-//            }
-//        }
-//        for(int i = 0; i<5;i++){
-//            for(int j =0; j<5; j++){
-//                walls[i][j] = 1;
-//            }
-//        }
-
-    }
+//    }
 
     public void pub (View v){
         String pub_message = roommap;
