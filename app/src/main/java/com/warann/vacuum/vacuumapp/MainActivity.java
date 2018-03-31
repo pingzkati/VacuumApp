@@ -9,45 +9,26 @@ import android.widget.TableRow;
 import android.content.Intent;
 import android.widget.ToggleButton;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
 
-//    String roommap = "##########" + "\n"
-//            + "#        #" + "\n"
-//            + "#        #" + "\n"
-//            + "#        #" + "\n"
-//            + "#        #" + "\n"
-//            + "#        #" + "\n"
-//            + "#        #" + "\n"
-//            + "#        #" + "\n"
-//            + "#        #" + "\n"
-//            + "##########";
-//    TableLayout allTable;
-    int table = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.select_plan);
-//        allTable = (TableLayout)findViewById(R.id.tableLayout);
+        setContentView(R.layout.activity_main);
 
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_id);
-        if (checkBox.isChecked()) {
-            table = 1;
-        }
+        Button start = (Button)findViewById(R.id.start);
 
-        Button next = (Button)findViewById(R.id.sendPlan);
-        next.setOnClickListener(new View.OnClickListener() {
+        start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ConclusionActivity.class);
+                Intent intent = new Intent(MainActivity.this, SelectSizeActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
-
     }
-
 
 }
