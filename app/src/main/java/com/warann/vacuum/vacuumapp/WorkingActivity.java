@@ -11,7 +11,6 @@ import android.os.Bundle;
 public class WorkingActivity extends AppCompatActivity {
 
     boolean finish = false;
-
     BooVariable listener = new BooVariable();
 
 

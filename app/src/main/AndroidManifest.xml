@@ -29,8 +29,6 @@
     </activity>
         <service android:name="org.eclipse.paho.android.service.MqttService" >
         </service>
-        <activity android:name="WorkingActivity">
-        </activity>
         <activity android:name="SelectSizeActivity">
         </activity>
         <activity android:name="ConclusionIntent">
