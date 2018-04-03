@@ -66,6 +66,7 @@ public class ConclusionActivity extends AppCompatActivity {
                 walls[i]=(int[]) objectArray[i];
             }
         }
+        roommap = getIntent().getStringExtra("roommap");
 
         allTable = (TableLayout)findViewById(R.id.tableLayout02);
 
