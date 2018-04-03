@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class SelectPlanActivity extends AppCompatActivity {
 
     int[][] tablePlan = new int[10][10];
+    String roommap = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +41,27 @@ public class SelectPlanActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                for(int i=0;i<10;i++) {
+                    for(int j=0;j<10;j++) {
+                        if(tablePlan[i][j] == 1) {
+                            roommap = roommap.concat("#");
+                        }
+                    else {
+                        roommap = roommap.concat(" ");
+                    }
+                }
+                    roommap = roommap.concat("\n");
+                }
+
                 Intent intent = new Intent(SelectPlanActivity.this, ConclusionActivity.class);
                 Bundle Bundle = new Bundle();
                 Bundle.putSerializable("tablePlan", tablePlan);
+                intent.putExtra("roommap", roommap);
                 intent.putExtras(Bundle);
                 startActivity(intent);
                 finish();
+
             }
         });
     }
