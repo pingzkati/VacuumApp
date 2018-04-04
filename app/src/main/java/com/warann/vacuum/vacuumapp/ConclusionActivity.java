@@ -30,7 +30,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class ConclusionActivity extends AppCompatActivity {
 
     int[][] walls = null;
-    int[] robot = {1 ,1};
+    int[] robot = {1 ,1}; //initial position from server
     String roommap = "##########" + "\n"
             + "#        #" + "\n"
             + "#        #" + "\n"
@@ -44,11 +44,15 @@ public class ConclusionActivity extends AppCompatActivity {
     TableLayout allTable;
 
     static String MQTTHOST = "tcp://159.89.198.162:1883";
-    String pub_topic = "topic/map";
+    String pub_topic = "topic/cango";
     String sub_topic = "topic/position" ;
-    MqttAndroidClient client;
+    String sub_topic2 = "topic/allStep" ;
+    String sub_topic3 = "topic/timeAll" ;
+    MqttAndroidClient client,client2,client3;
     TextView subText;
-    Vibrator vibrator;
+    TextView subText2;
+    TextView subText3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,17 +91,41 @@ public class ConclusionActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ConclusionActivity.this, WorkingActivity.class);
                 startActivity(intent);
+                String pub_message = "Yes";
+                try {
+                    client.publish(pub_topic, pub_message.getBytes(),0,false);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+                String pub_message2 = "Waiting";
+                try {
+                    client.publish(pub_topic, pub_message2.getBytes(),0,false);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
                 finish();
             }
         });
 
         subText = (TextView)findViewById(R.id.subText);
-        vibrator = (Vibrator)getSystemService(VIBRATOR_SERVICE);
+        subText2 = (TextView)findViewById(R.id.subText2);
+        subText3 = (TextView)findViewById(R.id.subText3);
+
+
         String clientId = MqttClient.generateClientId();
         client = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId);
 
-        MqttConnectOptions options = new MqttConnectOptions();
+        String clientId2 = MqttClient.generateClientId();
+        client2 = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId2);
 
+        String clientId3 = MqttClient.generateClientId();
+        client3 = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId3);
+
+        MqttConnectOptions options = new MqttConnectOptions();
+        MqttConnectOptions options2 = new MqttConnectOptions();
+        MqttConnectOptions options3 = new MqttConnectOptions();
+
+        /////////////////////   1    /////////////////////
         try {
             IMqttToken token = client.connect(options);
             token.setActionCallback(new IMqttActionListener() {
@@ -119,41 +147,89 @@ public class ConclusionActivity extends AppCompatActivity {
         client.setCallback(new MqttCallback() {
             @Override
             public void connectionLost(Throwable cause) {
-
             }
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
                 subText.setText(new String(message.getPayload()));
-                vibrator.vibrate(500);
             }
 
             @Override
             public void deliveryComplete(IMqttDeliveryToken token) {
+            }
+        });
 
+        /////////////////////   2   ///////////////////
+        try {
+            IMqttToken token2 = client2.connect(options2);
+            token2.setActionCallback(new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    Toast.makeText(ConclusionActivity.this,"Connected!!",Toast.LENGTH_LONG).show();
+                    setSubscription2();
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    Toast.makeText(ConclusionActivity.this,"Connection Failed !!",Toast.LENGTH_LONG).show();
+
+                }
+            });
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+        client2.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                subText2.setText(new String(message.getPayload()));
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+            }
+        });
+
+        //////////////////////   3   /////////////////////////
+        try {
+            IMqttToken token3 = client3.connect(options3);
+            token3.setActionCallback(new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    Toast.makeText(ConclusionActivity.this,"Connected!!",Toast.LENGTH_LONG).show();
+                    setSubscription3();
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    Toast.makeText(ConclusionActivity.this,"Connection Failed !!",Toast.LENGTH_LONG).show();
+
+                }
+            });
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+        client3.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                subText3.setText(new String(message.getPayload()));
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
             }
         });
     }
 
-//    public void setWalls(int[][] walls){
-////        if(walls[1][1]==1){
-////
-////        }
-////        for(int i = 0; i<10;i++){
-////            for(int j =0; j<10; j++){
-////                walls[i][j] = 0;
-////            }
-////        }
-////        for(int i = 0; i<5;i++){
-////            for(int j =0; j<5; j++){
-////                walls[i][j] = 1;
-////            }
-////        }
-//
-//    }
-
-    public void pub (View v){
-        String pub_message = roommap;
+    public void publish (View v){
+        String pub_message = "MAP";
         try {
             client.publish(pub_topic, pub_message.getBytes(),0,false);
         } catch (MqttException e) {
@@ -165,6 +241,22 @@ public class ConclusionActivity extends AppCompatActivity {
 
         try{
             client.subscribe(sub_topic,0);
+        }catch (MqttException e){
+            e.printStackTrace();
+        }
+    }
+    private void setSubscription2(){
+
+        try{
+            client2.subscribe(sub_topic2,0);
+        }catch (MqttException e){
+            e.printStackTrace();
+        }
+    }
+    private void setSubscription3(){
+
+        try{
+            client3.subscribe(sub_topic3,0);
         }catch (MqttException e){
             e.printStackTrace();
         }
