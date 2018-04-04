@@ -29,8 +29,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 public class ConclusionActivity extends AppCompatActivity {
 
-    int table = 1;
-
+    int[][] walls = null;
     int[] robot = {1 ,1};
     String roommap = "##########" + "\n"
             + "#        #" + "\n"
@@ -55,7 +54,22 @@ public class ConclusionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.conclusion);
+
+//        Bundle bundle = getIntent().getExtras();
+//        if (bundle != null) {
+//            bundle.putSerializable("tablePlan", walls);
+//        }
+        Object[] objectArray = (Object[]) getIntent().getExtras().getSerializable("tablePlan");
+        if(objectArray!=null){
+            walls = new int[objectArray.length][];
+            for(int i=0;i<objectArray.length;i++){
+                walls[i]=(int[]) objectArray[i];
+            }
+        }
+        roommap = getIntent().getStringExtra("roommap");
+
         allTable = (TableLayout)findViewById(R.id.tableLayout02);
+
         setPlan(roommap, allTable);
         setRobot(roommap, robot);
         Button back = (Button)findViewById(R.id.buttonBack);
@@ -63,6 +77,15 @@ public class ConclusionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ConclusionActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Button start = (Button)findViewById(R.id.startVacuum);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConclusionActivity.this, WorkingActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -112,6 +135,23 @@ public class ConclusionActivity extends AppCompatActivity {
         });
     }
 
+//    public void setWalls(int[][] walls){
+////        if(walls[1][1]==1){
+////
+////        }
+////        for(int i = 0; i<10;i++){
+////            for(int j =0; j<10; j++){
+////                walls[i][j] = 0;
+////            }
+////        }
+////        for(int i = 0; i<5;i++){
+////            for(int j =0; j<5; j++){
+////                walls[i][j] = 1;
+////            }
+////        }
+//
+//    }
+
     public void pub (View v){
         String pub_message = roommap;
         try {
@@ -133,6 +173,7 @@ public class ConclusionActivity extends AppCompatActivity {
 
     public void setPlan(String roommap, TableLayout allTable) {
         View[][] table = new View[10][10];
+//        setWalls(walls);
         String[] ary = roommap.split("\n");
         for(int i=0;i<allTable.getChildCount();i++){
             View tempTableRow = allTable.getChildAt(i);
@@ -145,11 +186,18 @@ public class ConclusionActivity extends AppCompatActivity {
         }
         for(int i = 0; i<10; i++){
             for(int j = 0; j<10; j++){
-                if(ary[i].charAt(j) == '#'){
+//                if(ary[i].charAt(j) == '#'){
+//                    table[i][j].setBackgroundColor(0x22222222);
+//                }
+                if(walls[i][j] == 1){
                     table[i][j].setBackgroundColor(0x22222222);
                 }
             }
         }
+
+//        if(walls[1][1]==1){
+//            table[1][1].setBackgroundColor(0x22222222);
+//        }
     }
 
     public void setRobot(String roommap, int[] robot){
@@ -164,9 +212,14 @@ public class ConclusionActivity extends AppCompatActivity {
             }
         }
 
-        int i = robot[0];
-        int j = robot[1];
-        table[i][j].setBackgroundColor(0xFF4081);
+
+//        if(tableset==1){
+//            table[1][1].setBackgroundColor(0x22222222);
+//        }
+
+//        int i = robot[0];
+//        int j = robot[1];
+//        table[i][j].setBackgroundColor(0xFF4081);
     }
 
 
