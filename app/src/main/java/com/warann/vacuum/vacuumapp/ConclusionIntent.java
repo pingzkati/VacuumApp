@@ -1,11 +1,190 @@
 package com.warann.vacuum.vacuumapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.eclipse.paho.android.service.MqttAndroidClient;
+import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
+import org.eclipse.paho.client.mqttv3.IMqttToken;
+import org.eclipse.paho.client.mqttv3.MqttCallback;
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 /**
  * Created by PINGZ on 30/03/2018.
  */
 public class ConclusionIntent extends AppCompatActivity {
+    static String MQTTHOST = "tcp://159.89.198.162:1883";
+
+    String sub_topic = "topic/position" ;
+    String sub_topic2 = "topic/allStep" ;
+    String sub_topic3 = "topic/timeAll" ;
+    MqttAndroidClient client,client2,client3;
+    TextView subText;
+    TextView subText2;
+    TextView subText3;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.finish);
+
+        subText = (TextView)findViewById(R.id.subText);
+        subText2 = (TextView)findViewById(R.id.subText2);
+        subText3 = (TextView)findViewById(R.id.subText3);
+
+
+        String clientId = MqttClient.generateClientId();
+        client = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId);
+
+        String clientId2 = MqttClient.generateClientId();
+        client2 = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId2);
+
+        String clientId3 = MqttClient.generateClientId();
+        client3 = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId3);
+
+        MqttConnectOptions options = new MqttConnectOptions();
+        MqttConnectOptions options2 = new MqttConnectOptions();
+        MqttConnectOptions options3 = new MqttConnectOptions();
+
+        /////////////////////   1    /////////////////////
+        try {
+            IMqttToken token = client.connect(options);
+            token.setActionCallback(new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    Toast.makeText(ConclusionIntent.this,"Connected!!",Toast.LENGTH_LONG).show();
+                    setSubscription();
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    Toast.makeText(ConclusionIntent.this,"Connection Failed !!",Toast.LENGTH_LONG).show();
+
+                }
+            });
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+        client.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                subText.setText(new String(message.getPayload()));
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+            }
+        });
+
+        /////////////////////   2   ///////////////////
+        try {
+            IMqttToken token2 = client2.connect(options2);
+            token2.setActionCallback(new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    Toast.makeText(ConclusionIntent.this,"Connected!!",Toast.LENGTH_LONG).show();
+                    setSubscription2();
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    Toast.makeText(ConclusionIntent.this,"Connection Failed !!",Toast.LENGTH_LONG).show();
+
+                }
+            });
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+        client2.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                subText2.setText(new String(message.getPayload()));
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+            }
+        });
+
+        //////////////////////   3   /////////////////////////
+        try {
+            IMqttToken token3 = client3.connect(options3);
+            token3.setActionCallback(new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    Toast.makeText(ConclusionIntent.this,"Connected!!",Toast.LENGTH_LONG).show();
+                    setSubscription3();
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    Toast.makeText(ConclusionIntent.this,"Connection Failed !!",Toast.LENGTH_LONG).show();
+
+                }
+            });
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+        client3.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                subText3.setText(new String(message.getPayload()));
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+            }
+        });
+    }
+
+    private void setSubscription(){
+
+        try{
+            client.subscribe(sub_topic,0);
+        }catch (MqttException e){
+            e.printStackTrace();
+        }
+    }
+    private void setSubscription2(){
+
+        try{
+            client2.subscribe(sub_topic2,0);
+        }catch (MqttException e){
+            e.printStackTrace();
+        }
+    }
+    private void setSubscription3(){
+
+        try{
+            client3.subscribe(sub_topic3,0);
+        }catch (MqttException e){
+            e.printStackTrace();
+        }
+    }
+
 
 }
