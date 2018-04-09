@@ -26,13 +26,13 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class ConclusionIntent extends AppCompatActivity {
     static String MQTTHOST = "tcp://159.89.198.162:1883";
 
-    String sub_topic = "topic/position" ;
-    String sub_topic2 = "topic/allStep" ;
-    String sub_topic3 = "topic/timeAll" ;
+    String sub_topic = "topic/finishMap" ;
+    String sub_topic2 = "topic/finishAllStep" ;
+    String sub_topic3 = "topic/finishTimeAll" ;
     MqttAndroidClient client,client2,client3;
     TextView subText;
-    TextView subText2;
-    TextView subText3;
+    TextView subText9;
+    TextView subText10;
 
 
     @Override
@@ -40,9 +40,9 @@ public class ConclusionIntent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finish);
 
-        subText = (TextView)findViewById(R.id.subText);
-        subText2 = (TextView)findViewById(R.id.subText2);
-        subText3 = (TextView)findViewById(R.id.subText3);
+        subText = (TextView)findViewById(R.id.textView); // map
+        subText9 = (TextView)findViewById(R.id.textView9); // step
+        subText10 = (TextView)findViewById(R.id.textView10); // time
 
 
         String clientId = MqttClient.generateClientId();
@@ -118,7 +118,7 @@ public class ConclusionIntent extends AppCompatActivity {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                subText2.setText(new String(message.getPayload()));
+                subText9.setText(new String(message.getPayload()));
             }
 
             @Override
@@ -152,7 +152,7 @@ public class ConclusionIntent extends AppCompatActivity {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                subText3.setText(new String(message.getPayload()));
+                subText10.setText(new String(message.getPayload()));
             }
 
             @Override
