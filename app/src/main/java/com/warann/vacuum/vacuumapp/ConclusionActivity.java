@@ -314,5 +314,4 @@ public class ConclusionActivity extends AppCompatActivity {
 //        table[i][j].setBackgroundColor(0xFF4081);
     }
 
-
 }
