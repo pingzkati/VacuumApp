@@ -34,11 +34,53 @@ public class ConclusionIntent extends AppCompatActivity {
     TextView subText9;
     TextView subText10;
 
+    TableLayout allTable;
+    String roommap = "##########" + "\n"
+            + "#        #" + "\n"
+            + "#        #" + "\n"
+            + "#        #" + "\n"
+            + "#        #" + "\n"
+            + "#        #" + "\n"
+            + "#        #" + "\n"
+            + "#        #" + "\n"
+            + "#        #" + "\n"
+            + "##########";
 
+
+    public void setPlan(String roommap, TableLayout allTable) {
+        View[][] table = new View[10][10];
+//        setWalls(walls);
+        String[] ary = roommap.split("\n");
+        for (int i = 0; i < allTable.getChildCount(); i++) {
+            View tempTableRow = allTable.getChildAt(i);
+            if (tempTableRow instanceof TableRow) {
+                TableRow row = (TableRow) tempTableRow;
+                for (int j = 0; j < row.getChildCount(); j++) {
+                    table[i][j] = row.getChildAt(j);
+                }
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (ary[i].charAt(j) == '#') {
+                    table[i][j].setBackgroundColor(0x22222222);
+                }
+                if (ary[i].charAt(j) == 'o') {
+                    table[i][j].setBackgroundColor(0x22222222);
+                }
+                if (ary[i].charAt(j) == '.') {
+                    table[i][j].setBackgroundColor(0x22222222);
+                }
+            }
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finish);
+
+        allTable = (TableLayout)findViewById(R.id.tableLayout02);
+        setPlan(roommap, allTable);
 
         subText = (TextView)findViewById(R.id.textView); // map
         subText9 = (TextView)findViewById(R.id.textView9); // step
