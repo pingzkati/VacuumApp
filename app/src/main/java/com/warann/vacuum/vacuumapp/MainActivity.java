@@ -27,16 +27,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-//        Button start = (Button)findViewById(R.id.start);
-//
-//        start.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, SelectSizeActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        Button start = (Button)findViewById(R.id.start);
+
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SelectSizeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 
