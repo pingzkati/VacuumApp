@@ -24,19 +24,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
 
 
-//        Button start = (Button)findViewById(R.id.start);
-//
-//        start.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, SelectSizeActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        Button start = (Button)findViewById(R.id.start);
+
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SelectSizeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 
