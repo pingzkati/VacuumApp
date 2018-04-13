@@ -326,7 +326,7 @@ public class ConclusionActivity extends AppCompatActivity {
         int i = y;
         int j = x;
 
-        table[i][j].setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        table[i][j].setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
     }
 
 

@@ -63,13 +63,13 @@ public class ConclusionIntent extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 if (ary[i].charAt(j) == '#') {
-                    table[i][j].setBackgroundColor(0x22222222);
+                    table[i][j].setBackgroundColor(getResources().getColor(android.R.color.black));
                 }
                 if (ary[i].charAt(j) == 'o') {
-                    table[i][j].setBackgroundColor(0x22222222);
+                    table[i][j].setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
                 }
                 if (ary[i].charAt(j) == '.') {
-                    table[i][j].setBackgroundColor(0x22222222);
+                    table[i][j].setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
                 }
             }
         }
@@ -79,8 +79,7 @@ public class ConclusionIntent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finish);
 
-        allTable = (TableLayout)findViewById(R.id.tableLayout02);
-        setPlan(roommap, allTable);
+
 
         subText = (TextView)findViewById(R.id.textView); // map
         subText9 = (TextView)findViewById(R.id.textView9); // step
@@ -126,7 +125,10 @@ public class ConclusionIntent extends AppCompatActivity {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                subText.setText(new String(message.getPayload()));
+                String map = new String(message.getPayload());
+                roommap = map;
+                allTable = (TableLayout)findViewById(R.id.tableLayout02);
+                setPlan(roommap, allTable);
             }
 
             @Override
