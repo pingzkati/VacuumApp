@@ -33,6 +33,8 @@
         </activity>
         <activity android:name="ConclusionIntent">
         </activity>
+        <activity android:name=".HistoryMainActivity">
+        </activity>
 
     </application>
 
