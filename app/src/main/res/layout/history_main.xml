@@ -191,4 +191,15 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/back"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="416dp"
+        android:text="BACK TO HOME"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

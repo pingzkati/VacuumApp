@@ -44,6 +44,17 @@ public class HistoryMainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.history_main);
 
+        Button back = (Button)findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HistoryMainActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 //        int[] resId = {R.drawable.cell_shape, R.drawable.cell_shape,
 //                R.drawable.cell_shape,R.drawable.cell_shape,
 //                R.drawable.cell_shape};
