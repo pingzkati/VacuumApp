@@ -30,7 +30,8 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class ConclusionActivity extends AppCompatActivity {
 
     int[][] walls = null;
-    int[] robot = {1 ,1}; //initial position from server
+    int[] robot = {1,1}; //initial position from server
+    int one,two;
     String roommap = "##########" + "\n"
             + "#        #" + "\n"
             + "#        #" + "\n"
@@ -49,7 +50,7 @@ public class ConclusionActivity extends AppCompatActivity {
     String sub_topic2 = "topic/allStep" ;
     String sub_topic3 = "topic/timeAll" ;
     MqttAndroidClient client,client2,client3;
-    TextView subText;
+    //TextView subText;
     TextView subText2;
     TextView subText3;
 
@@ -75,7 +76,7 @@ public class ConclusionActivity extends AppCompatActivity {
         allTable = (TableLayout)findViewById(R.id.tableLayout02);
 
         setPlan(roommap, allTable);
-        setRobot(roommap, robot);
+
         Button back = (Button)findViewById(R.id.buttonBack);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +108,7 @@ public class ConclusionActivity extends AppCompatActivity {
             }
         });
 
-        subText = (TextView)findViewById(R.id.subText);
+        //subText = (TextView)findViewById(R.id.subText);
         subText2 = (TextView)findViewById(R.id.subText2);
         subText3 = (TextView)findViewById(R.id.subText3);
 
@@ -151,7 +152,16 @@ public class ConclusionActivity extends AppCompatActivity {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                subText.setText(new String(message.getPayload()));
+                //subText.setText(new String(message.getPayload()));
+                String str_robot = new String(message.getPayload());
+                String[] ary = str_robot.split(" ");
+                String s1 = ary[0];
+                String s2 = ary[1];
+                one = Integer.valueOf(s1);
+                two = Integer.valueOf(s2);
+
+                setRobot(roommap,one,two);
+
             }
 
             @Override
@@ -226,6 +236,10 @@ public class ConclusionActivity extends AppCompatActivity {
             public void deliveryComplete(IMqttDeliveryToken token) {
             }
         });
+
+
+
+
     }
 
     public void publish (View v){
@@ -292,10 +306,10 @@ public class ConclusionActivity extends AppCompatActivity {
 //        }
     }
 
-    public void setRobot(String roommap, int[] robot){
+    public void setRobot(String roommap, int x , int y){
         View[][] table = new View[10][10];
         for(int i=0;i<allTable.getChildCount();i++){
-            View tempTableRow = allTable.getChildAt(i);
+           View tempTableRow = allTable.getChildAt(i);
             if (tempTableRow instanceof TableRow){
                 TableRow row = (TableRow) tempTableRow;
                 for(int j=0;j<row.getChildCount();j++){
@@ -309,9 +323,10 @@ public class ConclusionActivity extends AppCompatActivity {
 //            table[1][1].setBackgroundColor(0x22222222);
 //        }
 
-//        int i = robot[0];
-//        int j = robot[1];
-//        table[i][j].setBackgroundColor(0xFF4081);
+        int i = y;
+        int j = x;
+
+        table[i][j].setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
     }
 
 }

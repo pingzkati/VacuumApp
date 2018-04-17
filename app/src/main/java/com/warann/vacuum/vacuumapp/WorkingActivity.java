@@ -22,13 +22,14 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 public class WorkingActivity extends AppCompatActivity {
 
-    boolean finish = false;
-    BooVariable listener = new BooVariable();
+    //boolean finish = false;
+    //BooVariable listener = new BooVariable();
 
 
     static String MQTTHOST = "tcp://159.89.198.162:1883";
     String sub_topic = "topic/finish" ;
-    MqttAndroidClient client;
+    String sub_topic2 = "topic/working" ;
+    MqttAndroidClient client,client2;
     TextView subText;
 
     @Override
@@ -39,8 +40,10 @@ public class WorkingActivity extends AppCompatActivity {
         subText = (TextView)findViewById(R.id.textView4);
         String clientId = MqttClient.generateClientId();
         client = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId);
+        client2 = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId);
 
         MqttConnectOptions options = new MqttConnectOptions();
+        MqttConnectOptions options2 = new MqttConnectOptions();
 
         try {
             IMqttToken token = client.connect(options);
@@ -60,6 +63,24 @@ public class WorkingActivity extends AppCompatActivity {
         } catch (MqttException e) {
             e.printStackTrace();
         }
+        try {
+            IMqttToken token = client2.connect(options2);
+            token.setActionCallback(new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    Toast.makeText(WorkingActivity.this,"Connected!!",Toast.LENGTH_LONG).show();
+                    setSubscription2();
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    Toast.makeText(WorkingActivity.this,"Connection Failed !!",Toast.LENGTH_LONG).show();
+
+                }
+            });
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
         client.setCallback(new MqttCallback() {
             @Override
             public void connectionLost(Throwable cause) {
@@ -68,8 +89,25 @@ public class WorkingActivity extends AppCompatActivity {
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
                 subText.setText(new String(message.getPayload()));
-                Intent intent = new Intent(WorkingActivity.this, ConclusionIntent.class);
-                startActivity(intent);
+                String ms = new String(message.getPayload());
+                if( ms.equals("finish")){
+                    Intent intent = new Intent(WorkingActivity.this, ConclusionIntent.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+            }
+        });
+        client2.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                subText.setText(new String(message.getPayload()));
             }
 
             @Override
@@ -87,6 +125,16 @@ public class WorkingActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    private void setSubscription2(){
+
+        try{
+            client2.subscribe(sub_topic2,0);
+        }catch (MqttException e){
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 //    listener.setListener(new BooVariable.ChangeListener() {
