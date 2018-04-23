@@ -33,6 +33,7 @@ public class HistoryMainActivity extends AppCompatActivity{
     static String MQTTHOST = "tcp://159.89.198.162:1883";
 
     String sub_topic = "topic/detailHistory" ;
+    String pub_topic = "topic/History";
     String one,two,three,four,five;
 
     MqttAndroidClient client,client2,client3;
@@ -138,17 +139,111 @@ public class HistoryMainActivity extends AppCompatActivity{
             public void deliveryComplete(IMqttDeliveryToken token) {
             }
         });
+        //////////////////////  Button Detail 1 ////////////////
+        Button detail1 = (Button)findViewById(R.id.detail1);
 
-//        final String[] list = {one,two,three,four,five};
-//
-//        CustomAdapter adapter = new CustomAdapter(getApplicationContext(), list, resId);
-//
-//        ListView listView = (ListView)findViewById(R.id.listView1);
-//        listView.setAdapter(adapter);
-//        listView.setOnItemClickListener(new OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-//            }
-//        });
+        detail1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String pub_message1 = "one" ;
+                try {
+                    client.publish(pub_topic, pub_message1.getBytes(),0,false);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+
+                Intent intent = new Intent(HistoryMainActivity.this, HistoryDetailActivity.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
+        //////////////////////  Button Detail 2 ////////////////
+        Button detail2 = (Button)findViewById(R.id.detail2);
+
+        detail2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String pub_message2 = "two" ;
+                try {
+                    client.publish(pub_topic, pub_message2.getBytes(),0,false);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+
+                Intent intent = new Intent(HistoryMainActivity.this, HistoryDetailActivity.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
+        //////////////////////  Button Detail 3 ////////////////
+        Button detail3 = (Button)findViewById(R.id.detail3);
+
+        detail3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String pub_message3 = "three" ;
+                try {
+                    client.publish(pub_topic, pub_message3.getBytes(),0,false);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+
+                Intent intent = new Intent(HistoryMainActivity.this, HistoryDetailActivity.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
+        //////////////////////  Button Detail 4 ////////////////
+        Button detail4 = (Button)findViewById(R.id.detail4);
+
+        detail4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String pub_message4 = "four" ;
+                try {
+                    client.publish(pub_topic, pub_message4.getBytes(),0,false);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+
+                Intent intent = new Intent(HistoryMainActivity.this, HistoryDetailActivity.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
+        //////////////////////  Button Detail 5 ////////////////
+        Button detail5 = (Button)findViewById(R.id.detail5);
+
+        detail5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String pub_message5 = "five" ;
+                try {
+                    client.publish(pub_topic, pub_message5.getBytes(),0,false);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+
+                Intent intent = new Intent(HistoryMainActivity.this, HistoryDetailActivity.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
     }
     private void setSubscription(){
 
