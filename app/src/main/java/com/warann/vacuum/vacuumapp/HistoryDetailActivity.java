@@ -1,8 +1,10 @@
 package com.warann.vacuum.vacuumapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -67,6 +69,16 @@ public class HistoryDetailActivity extends AppCompatActivity {
         time = (TextView) findViewById(R.id.textView10);
 
 
+        Button back = (Button)findViewById(R.id.buttonBack);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HistoryDetailActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         String clientId = MqttClient.generateClientId();
         client = new MqttAndroidClient(this.getApplicationContext(), MQTTHOST, clientId);

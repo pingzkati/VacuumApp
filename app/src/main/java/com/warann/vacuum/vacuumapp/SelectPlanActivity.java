@@ -48,6 +48,17 @@ public class SelectPlanActivity extends AppCompatActivity {
 
         TextView err = (TextView)findViewById(R.id.TextCount);
 
+        Button back = (Button)findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectPlanActivity.this, SelectSizeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         Button next = (Button)findViewById(R.id.sendPlan);
 
         next.setOnClickListener(new View.OnClickListener() {
