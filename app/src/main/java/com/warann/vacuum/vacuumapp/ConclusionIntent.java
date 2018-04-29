@@ -80,6 +80,16 @@ public class ConclusionIntent extends AppCompatActivity {
         setContentView(R.layout.finish);
 
 
+        Button back = (Button)findViewById(R.id.buttonBack);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConclusionIntent.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         subText = (TextView)findViewById(R.id.textView); // map
         subText9 = (TextView)findViewById(R.id.textView9); // step
